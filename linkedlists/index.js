@@ -27,7 +27,14 @@ class SinglyLinkedList {
 
 let list = new SinglyLinkedList();
 list.push(1);
-list.push(1);
-list.push(1);
-list.push(1);
-console.log(list);
+list.push(2);
+list.push(3);
+list.push(4);
+
+const thisList = (list) => {
+  let current = list.head;
+
+  list.tail = list.head;
+};
+
+thisList(list);
