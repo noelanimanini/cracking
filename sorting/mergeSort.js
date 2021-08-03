@@ -37,6 +37,7 @@ function helperFunction(left, right) {
   //because the empty array will be ignored.
   let results = [...parentArray, ...left, ...right];
 
+  //return the results!
   return results;
 }
 
