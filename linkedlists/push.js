@@ -21,6 +21,7 @@ class SinglyLinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.length++;
     return this.length;
   }
 }
@@ -31,10 +32,4 @@ list.push(2);
 list.push(3);
 list.push(4);
 
-const thisList = (list) => {
-  let current = list.head;
-
-  list.tail = list.head;
-};
-
-thisList(list);
+console.log(list);
