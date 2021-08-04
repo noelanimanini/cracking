@@ -22,8 +22,9 @@ class SinglyLinkedList {
       this.tail = newNode;
     }
 
-    //assign the new nodes next value to be the head
+    //create the pointer of the new Node to the current head
     newNode.next = this.head;
+    //assign the head to be the new node
     this.head = newNode;
     //increment the length
     this.length++;
