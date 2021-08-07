@@ -44,6 +44,37 @@ class BST {
       }
     }
   }
+  find(value) {
+    //finding the value in the BST
+    //if the root is null, return false
+    if (!this.root) return false;
+    //initialize a variable for the current (the root)
+    let current = this.root;
+    //initialize a variable for found, a boolean set to false
+    let found = false;
+    /*
+    while there is a current and the found is falsy, 
+     if the value is less than the current.value,
+     traverse left 
+     if the value is greater than the current value, 
+     traverse right 
+     else 
+     set found to true
+    */
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+    //if the found is true, then return undefined
+    if (!found) return undefined;
+    //return the current
+    return current;
+  }
 }
 
 let bst = new BST();
