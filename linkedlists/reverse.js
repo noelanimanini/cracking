@@ -22,26 +22,20 @@ class SinglyLinkedList {
     }
   }
   reverse() {
-    //assign a variable to represent the head
+    //set a variable equal to the head, tail and assign the head to be the tail
     let node = this.head;
-    //assign the head to be the tail
     this.head = this.tail;
-    //assign the tail to be the variable created
-    this.tail = node;
-    //initialize a variable for the next, and previous = null
+    //set variables equal to the next and prevous = null
     let next;
-    let prev;
+    let prev = null;
 
     //loop through the list
-    for (let i = 0; i < list.length; i++) {
-      //assign next to be the node's pointer
+    for (let i = 0; i < this.length; i++) {
       next = node.next;
-      //assign the node.next
       node.next = prev;
       prev = node;
       node = next;
     }
     //return the list
-    return this;
   }
 }
