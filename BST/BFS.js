@@ -11,73 +11,82 @@ class BST {
     this.root = null;
   }
   insert(val) {
-    //if there is no root, assign it
+    //initialize a variable to be the new node
     let newNode = new Node(val);
+    //if there is no root, assign the root to be the val
     if (!this.root) {
       this.root = newNode;
       return this;
     }
+
+    //initialize a variable for the root
     let current = this.root;
+
+    //while true, if the val is the same as the root.value, return undefined
     while (true) {
-      if (current.val === val) {
-        return undefined;
-      }
-      if (current.val > val) {
+      if (val === current.val) return undefined;
+      if (val < current.val) {
         if (current.left === null) {
           current.left = newNode;
+          return this;
         }
         current = current.left;
       } else {
         if (current.right === null) {
           current.right = newNode;
+          return this;
         }
         current = current.right;
       }
     }
   }
-  find(value) {
-    if (!this.root) return null;
+
+  find(val) {
+    //if there is no root, return undefined
+    if (!this.root) return undefined;
+    //create a variable for the root
     let current = this.root;
+    //create a variable called found. It is a boolean set to false
     let found = false;
     while (current && !found) {
-      if (value < current.val) {
+      //if the value is less than the current.vale, traverse left
+      if (val < current.val) {
         current = current.left;
-      } else if (value > current.val) {
+      }
+      //if the value is greater than the current.value, traverse right
+      else if (val > current.val) {
         current = current.right;
       } else {
         found = true;
       }
     }
-    if (!found) return false;
+
+    if (!found) return undefined;
+    console.log(current);
     return current;
   }
   BFS() {
-    //Create a queue, and a variable for the root
     let current = this.root;
     let data = [];
     let queue = [];
+
     queue.push(current);
-    //while the queue length is present,
     while (queue.length) {
-      //shift the first thing in the queue
       current = queue.shift();
-      //push the current value to the queue
       data.push(current.val);
-      //if the current.left is still there, current.left
       if (current.left) queue.push(current.left);
-      //if the current.right is still there, push it to the queue
       if (current.right) queue.push(current.right);
     }
-    console.log("data", data);
-    //return the data
+    console.log(data, data);
     return data;
   }
 }
 
-let tree = new BST();
+var tree = new BST();
+tree.insert(10);
 tree.insert(6);
-tree.insert(12);
-tree.insert(5);
+tree.insert(15);
 tree.insert(3);
+tree.insert(8);
 tree.insert(20);
 tree.BFS();
