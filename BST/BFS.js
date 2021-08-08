@@ -66,18 +66,25 @@ class BST {
     return current;
   }
   BFS() {
+    //assign a variable to be the root
     let current = this.root;
+    //create arrays for the data and the queue
     let data = [];
     let queue = [];
-
+    //push everything into the queue
     queue.push(current);
+    //while the length is still there
     while (queue.length) {
+      //shift the first item from the tree
       current = queue.shift();
+      console.log("current", current);
+      //push the value into the data
       data.push(current.val);
+      //continue to push the data into the queue
       if (current.left) queue.push(current.left);
       if (current.right) queue.push(current.right);
     }
-    console.log(data, data);
+    console.log("data", data);
     return data;
   }
 }
