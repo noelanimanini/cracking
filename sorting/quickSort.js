@@ -12,7 +12,10 @@ function quickSort(array) {
     let value = array[ele];
     value <= pivot ? less.push(value) : greater.push(value);
   }
-  return [...less, pivot, ...greater];
+
+  console.log([...quickSort(less), pivot, ...quickSort(greater)]);
+  //return the concatenated recursive array using the spread operator.
+  return [...quickSort(less), pivot, ...quickSort(greater)];
 }
 
 //Big O is o (n log n). This means that the algorithm is very efficient.
