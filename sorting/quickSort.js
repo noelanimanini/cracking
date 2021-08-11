@@ -22,4 +22,6 @@ function quickSort(array) {
   return [...quickSort(less), pivot, ...quickSort(greater)];
 }
 
+//Big O is o (n log n). This means that the algorithm is very efficient.
+
 quickSort([3, 5, 4, 2, 2, 9, 8, 77]);
