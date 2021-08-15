@@ -28,4 +28,4 @@ const multiplyNums = (nums) => {
   return ans;
 };
 
-multiplyNums([1, 2, 3]);
+multiplyNums([1, 2, 3]); asd
