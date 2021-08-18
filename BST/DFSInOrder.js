@@ -49,4 +49,21 @@ class Tree {
     traverse(this.root);
     return data;
   }
+  preOrder() {
+    //initialize an array
+    let data = [];
+    //create a function inside this functino that takes in node as it's argument
+    function traverseStuff(node) {
+      //push the data into the array
+      data.push(node.val);
+      //if the left exists, traverse the left
+      if (node.left) traverseStuff(node.left);
+      //if the right exists, traverse the right
+      if (node.right) traverseStuff(node.right);
+    }
+    //invoke the function
+    traverseStuff(this.root);
+    //return the array
+    return data;
+  }
 }
