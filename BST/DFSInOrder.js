@@ -66,4 +66,21 @@ class Tree {
     //return the array
     return data;
   }
+  postOrder() {
+    //initialize the array
+    let data = [];
+    //create a function that takes in node as the argument
+    function traverse(node) {
+      //if the left exists, traverse,
+      if (node.left) traverse(node.left);
+      //if the right exists, traverse the right
+      if (node.right) traverse(node.right);
+      //push the node values into the array
+      data.push(node.val);
+    }
+    //invoke the function
+    traverse(this.root);
+    //return the data
+    return data;
+  }
 }
