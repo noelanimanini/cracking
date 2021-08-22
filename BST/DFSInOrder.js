@@ -46,6 +46,7 @@ class Tree {
       data.push(node.val);
       if (node.right) traverse(node.right);
     };
+    //recursively call the root to traverse the tree
     traverse(this.root);
     return data;
   }
