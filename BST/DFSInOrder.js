@@ -80,7 +80,7 @@ class Tree {
     }
     //invoke the function
     traverse(this.root);
-    //return the data
+    //return the data for the user to see this form of traversal
     return data;
   }
 }
