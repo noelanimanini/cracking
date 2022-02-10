@@ -31,19 +31,23 @@ sort.
 */
 
 const practiceFunc = (array, target) => {
+  // let array = array.sort();
+  // ^you cannot sort the array
   let newArr = [];
+  let hash = {};
+  for (let i of array) {
+    hash[i] = i;
+  }
   for (let i = 0; i < array.length; i++) {
-    let curr = array[i];
-    if (curr + array[i + 1] === target) {
-      newArr.push(i, i + 1);
-    } else {
-      newArr;
+    let compliment = target - array[i];
+    if (compliment in hash) {
+      newArr.push(i);
     }
   }
   console.log(newArr);
-  return newArr;
 };
 
 // practiceFunc([2, 7, 11, 15], 9);
-//practiceFunc([3, 3], 6);
-complete! 
+practiceFunc([3, 2, 4], 6);
+// practiceFunc([3, 3], 6);
+// practiceFunc([3, 2, 3], 6);
