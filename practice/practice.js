@@ -35,19 +35,22 @@ const practiceFunc = (array, target) => {
   // ^you cannot sort the array
   let newArr = [];
   let hash = {};
-  for (let i of array) {
-    hash[i] = i;
-  }
+  // for (let i of array) {
+  //   hash[i] = i;
+  // }
+  console.log(hash);
   for (let i = 0; i < array.length; i++) {
     let compliment = target - array[i];
-    if (compliment in hash) {
-      newArr.push(i);
+
+    if (hash.hasOwnProperty(compliment)) {
+      newArr.push(hash[compliment], i);
     }
+    hash[array[i]] = i;
   }
   console.log(newArr);
 };
 
 // practiceFunc([2, 7, 11, 15], 9);
-practiceFunc([3, 2, 4], 6);
+// practiceFunc([3, 2, 4], 6);
 // practiceFunc([3, 3], 6);
-// practiceFunc([3, 2, 3], 6);
+practiceFunc([3, 2, 3], 6);
