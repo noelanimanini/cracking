@@ -8,6 +8,7 @@ Explanation: "aba" is also a valid answer.
 /*
 given a string iterate through the string. create a variable to save each iteration to. 
 **Somehow need to place the logic that the first and last iteration have to be the same.
+https://www.youtube.com/watch?v=y2BD4MJqV20&ab_channel=NickWhite
 */
 
 const longestPalindromicSubstring = (a) => {
