@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/18619785/counting-frequency-of-characters-in-a-string-using-javascript
 const isUnique = (str) => {
   let current = str.split("");
   let hash = {};
