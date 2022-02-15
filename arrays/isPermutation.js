@@ -10,7 +10,7 @@ const isPermutation = (a, b) => {
   for (let ele of cur2) {
     hash[ele] ? hash[ele]++ : (hash[ele] = 1);
   }
-
+  // https://flexiple.com/loop-through-object-javascript/
   Object.values(hash).forEach((x) => {
     console.log("this is x" + x);
     if (x % 2 === 1) {
