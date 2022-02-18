@@ -56,3 +56,4 @@ A palindrome can have one letter be odd and the rest be even, or the entire pali
 4. else false 
 
 */
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
