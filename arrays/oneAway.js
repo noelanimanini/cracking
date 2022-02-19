@@ -12,19 +12,29 @@ const oneAway = (st1, st2) => {
     }
   });
 
-  if (count > 1) {
-    console.log(false);
-    return false;
+  if (st1.length !== st2.length) {
+    if (count > 1) {
+      console.log(false);
+      return false;
+    } else {
+      console.log(true);
+      return true;
+    }
   } else {
-    console.log(true);
-    return true;
+    if (count > 2) {
+      console.log(false);
+      return false;
+    } else {
+      console.log(true);
+      return true;
+    }
   }
 };
 
-// oneAway("pale", "ple");
+oneAway("pale", "ple");
 // oneAway("pales", "pale");
 // oneAway("pale", "bale");
-oneAway("pale", "bake");
+// oneAway("pale", "bake");
 
 // given two strings, write a function to check if they are one edit or zero edits away
 /*
