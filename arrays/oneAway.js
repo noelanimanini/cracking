@@ -1,6 +1,30 @@
-const oneAway = (st1, st2) => {};
+const oneAway = (st1, st2) => {
+  let hash = {};
+  let count = 0;
+  let s1 = (st1 + st2).split("");
+  for (let ele of s1) {
+    hash[ele] ? hash[ele]++ : (hash[ele] = 1);
+  }
 
-oneAway("pale", "ple");
+  Object.values(hash).forEach((x) => {
+    if (x === 1) {
+      count += 1;
+    }
+  });
+
+  if (count > 1) {
+    console.log(false);
+    return false;
+  } else {
+    console.log(true);
+    return true;
+  }
+};
+
+// oneAway("pale", "ple");
+// oneAway("pales", "pale");
+// oneAway("pale", "bale");
+oneAway("pale", "bake");
 
 // given two strings, write a function to check if they are one edit or zero edits away
 /*
