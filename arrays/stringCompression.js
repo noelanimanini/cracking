@@ -4,18 +4,28 @@ const stringCompression = (string) => {
   let hash = {};
   let result = "";
   for (let ele of str) {
-    if (!hash[ele] && str[ele + 1] == str[ele]) {
-      count++;
-      result += ele + count;
+    if (!hash[ele]) {
       hash[ele] = 1;
-    } else if (hash[ele] && str[ele + 1] == str[ele]) {
-      count++;
-      result += count;
+      if (str[ele + 1] == str[ele]) {
+        count++;
+        result += ele;
+        result += count;
+      } else if (str[ele + 1] !== str[ele]) {
+        count++;
+        result += count;
+        count = 0;
+      }
+    } else if (hash[ele]) {
+      result += ele;
       hash[ele]++;
-    } else if (!hash[ele] && str[ele + 1] !== str[ele]) {
-      count++;
-      result += ele + count;
-      hash[ele] = 1;
+      if (str[ele + 1] == str[ele]) {
+        count++;
+        result += count;
+      } else if (str[ele + 1] !== str[ele]) {
+        count++;
+        result += count;
+      }
+      count = 0;
     }
   }
   console.log(result);
