@@ -3,35 +3,30 @@ const stringCompression = (string) => {
   let count = 0;
   let hash = {};
   let result = "";
-  for (let ele of str) {
-    if (!hash[ele]) {
-      hash[ele] = 1;
-      if (str[ele + 1] == str[ele]) {
+  for (let i = 0; i < str.length; i++) {
+    if (!hash[str[i]]) {
+      hash[str[i]] = str[i];
+      if (str[i] !== str[i + 1]) {
         count++;
-        result += ele;
-        result += count;
-      } else if (str[ele + 1] !== str[ele]) {
-        count++;
-        result += count;
+        result += str[i] + count;
         count = 0;
-      }
-    } else if (hash[ele]) {
-      result += ele;
-      hash[ele]++;
-      if (str[ele + 1] == str[ele]) {
+      } else {
         count++;
-        result += count;
-      } else if (str[ele + 1] !== str[ele]) {
-        count++;
-        result += count;
       }
-      count = 0;
+    } else if (hash[str[i]]) {
+      if (str[i] !== str[i + 1]) {
+        count++;
+        result += str[i] + count;
+        count = 0;
+      } else {
+        count++;
+      }
     }
   }
   console.log(result);
 };
 
-stringCompression("aabcc");
+stringCompression("aabcccccaaa");
 
 /*
 Q: given a string, compress it to count the number of characters it has and return the order. If the compressed string is longer than the original string length, return the original string. 
