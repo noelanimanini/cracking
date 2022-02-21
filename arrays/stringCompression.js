@@ -23,6 +23,11 @@ const stringCompression = (string) => {
       }
     }
   }
+  if (result.length > str.length) {
+    return str;
+  } else {
+    return result;
+  }
   console.log(result);
 };
 
