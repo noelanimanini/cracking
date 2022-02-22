@@ -27,9 +27,10 @@
 
 function rotate(matrix) {          // function statement
     const N = matrix.length - 1;   // use a constant
+    console.log("this is N"+N)
     // use arrow functions and nested map;
     const result = matrix.map((row, i) => 
-         row.map((val, j) => matrix[N - j][i])
+         row.map((val, j) => console.log("second "+matrix[N - j][i]))
     );
     matrix.length = 0;       // hold original array reference
     matrix.push(...result);  // Spread operator
