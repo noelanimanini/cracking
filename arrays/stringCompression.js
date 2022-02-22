@@ -24,6 +24,7 @@ const stringCompression = (string) => {
     }
   }
   if (result.length > str.length) {
+    console.log(result);
     return str;
   } else {
     console.log(result);
