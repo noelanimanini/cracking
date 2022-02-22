@@ -32,7 +32,7 @@ const stringCompression = (string) => {
 };
 
 stringCompression("aabcccccaaa");
-stringCompression("hhttzzs");
+stringCompression("hhttzzs ");
 
 /*
 Q: given a string, compress it to count the number of characters it has and return the order. If the compressed string is longer than the original string length, return the original string. 
