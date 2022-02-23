@@ -9,4 +9,4 @@ function FirstFactorial(num) {
 
    FirstFactorial(8)
 
-   https://www.coderbyte.com/editor/First%20Factorial:JavaScript?utm_campaign=NewHomepage
+//    https://www.coderbyte.com/editor/First%20Factorial:JavaScript?utm_campaign=NewHomepage
