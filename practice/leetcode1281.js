@@ -19,6 +19,9 @@ const practice = (n) => {
 }
 
 practice(234)
+/*
+https://javascript.plainenglish.io/algorithms-101-product-and-sum-of-digits-in-javascript-2c09925ac11a
+*/ 
 
 /*
 Given an integer number n, return the difference between the product of its digits and the sum of its digits.
