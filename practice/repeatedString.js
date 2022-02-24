@@ -1,31 +1,28 @@
-const repeatedString = (str, n) => {
-    let cat = str
-    let arr = []
-    let count = 0
-    while (str.length <= n) {
-        str += (cat)
+const repeatedString = (s, n) => {
+    const min = 1;
+    const maxs = 100;
+    const maxn = 1000000000000;
+    let as = s.split('').filter(i => i === "a").length;
+    console.log("this is as "+as)
+    if (typeof s === "string"
+         && s.length >= min
+         && s.length <= maxs
+         && n === parseInt(n, 0)
+         && n >= min
+         && n <= maxn) {
+             console.log(parseInt(n / s.length, 0) * as) 
+             console.log((s.slice(0, (n % s.length)).split('').filter(i => i === "a").length)) 
+         as = (parseInt(n / s.length, 0) * as) + (s.slice(0, (n % s.length)).split('').filter(i => i === "a").length);
     }
-    let res = str.split("")
-    for (let i=0; i < n; i++) {
-        let cur = res[i]
-        arr.push(cur)
-    }
-    
- 
-    for (let i=0; i < arr.length; i++) {
-        let first = arr[i]
-        if (first === "a") {
-            count++
-        }
-    }
-    console.log(count)
-    return count
+    console.log(as)
+    return as; 
  }
 //  https://www.geeksforgeeks.org/count-occurrences-of-a-character-in-a-repeated-string/
 
 
 // repeatedString("aba", 10)
-repeatedString("abcac", 10)
+// repeatedString("abcac", 10)
+repeatedString("a", 1000000000000)
 
 // There is a string,s , of lowercase English letters that is repeated infinitely many times. Given an integer, , find and print the number of letter a's in the first  letters of the infinite string.
 
