@@ -1,5 +1,6 @@
 const longestString = (str) => {
     let result = str.replace(/[$&+,:;=?@#|'<>.^*()%!-]/g, "")
+    // [$&+,:;=?@#|'<>.^*()%!-]
     let curr = result.split(" ")
     let first = ""
     let i=0
