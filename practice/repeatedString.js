@@ -18,6 +18,7 @@ const repeatedString = (s, n) => {
     return as; 
  }
 //  https://www.geeksforgeeks.org/count-occurrences-of-a-character-in-a-repeated-string/
+// https://codingwithmanny.medium.com/how-to-solve-the-repeated-string-challenge-759b4ea34242
 
 
 // repeatedString("aba", 10)
