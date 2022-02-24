@@ -23,6 +23,7 @@ const repeatedString = (str, n) => {
  }
 //  https://www.geeksforgeeks.org/count-occurrences-of-a-character-in-a-repeated-string/
 
+
 // repeatedString("aba", 10)
 repeatedString("abcac", 10)
 
