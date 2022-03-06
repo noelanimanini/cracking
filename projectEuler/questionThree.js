@@ -3,15 +3,16 @@ const questionThree = (number) => {
     for (let i=0; i <= number; i++) {
         if (number % i === 0) {
             array.push(i)
+            array.push(number / i)
         }
     }
     console.log(array)
-    grabHighestNum(array, number)
+    grabHighestNum(number)
     // return array
 
 }
 
-const grabHighestNum = (array, number) => {
+const grabHighestNum = ( number) => {
     let highest; 
     let i=0
     let result = []
@@ -28,12 +29,28 @@ const grabHighestNum = (array, number) => {
         highest = number
     }
     
-    while (array[i] <= highest) {
-        result.push(array[i])
-        i++
-    }
-    console.log(result)
+    // while (array[i] <= highest) {
+    //     result.push(array[i])
+    //     i++
+    // }
+    console.log(highest)
+    // questionThree(highest, number)
 }
+
+// const questionThree = (highest, number) => {
+//     let array = []
+//     for (let i=1; i <= highest; i++) {
+//     //    console.log(i)
+//         if (highest % i === 0) {
+//             array.push(i)
+//         }
+//     }
+//     console.log(array)
+  
+    // return array
+
+// }
+
 // const helperPrime = (num) => {
 //     for(let i = 2, s = Math.sqrt(num); i <= s; i++)
 //         if(num % i === 0) return false; 
@@ -41,8 +58,8 @@ const grabHighestNum = (array, number) => {
 //     return num > 1;
    
 // }
-
-questionThree(13195)
+grabHighestNum(600851475143)
+// questionThree(600851475143)
 
 /*
 The prime factors of 13195 are 5, 7, 13 and 29.
