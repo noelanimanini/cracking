@@ -3,11 +3,29 @@ const isPalindrome = (value) => {
     return reversed === Number(value)
 }
 
-const questionFour = () => {
+const questionFour = (n) => {
+    let highest = 0
+    let largestNum = "9"
+    largestNum += Number(largestNum.repeat(n-1))
+    largestNum = Number(largestNum)
 
+    for (let i=largestNum; i > 0; i--) {
+        for (let j=largestNum; j > 0; j--) {
+            console.log(j)
+            let product = i * j
+            if (isPalindrome(product)) {
+                if (product > highest) {
+                    highest = product
+                    break;
+                }
+            }
+        }
+    }
+    console.log(highest)
+    return highest
 }
 
-questionFour()
+questionFour(3)
 
 /*
 A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
