@@ -1,18 +1,10 @@
-const questionFour = () => {
-    let first = 900
-   let result; 
-    for (let i=1; i <= 99; i++) {
-        // console.log(first + i + j)
-        for (let j=1; j <= 99; j++) {
-           let product = (first + i ) * first
-              
-           if (product === Number(product.toString().split("").reverse().join(""))){
-            console.log("does this work")
-           }
-        }
+const isPalindrome = (value) => {
+    let reversed = Number(value.toString().split('').reverse().join(''))
+    return reversed === Number(value)
+}
 
-    }
-//  console.log(result)
+const questionFour = () => {
+
 }
 
 questionFour()
