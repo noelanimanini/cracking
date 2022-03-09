@@ -5,13 +5,13 @@ const isPalindrome = (value) => {
 
 const questionFour = (n) => {
     let highest = 0
-    let largestNum = "9"
-    largestNum += Number(largestNum.repeat(n-1))
-    largestNum = Number(largestNum)
+    let largestNum = 999
+    // largestNum += Number(largestNum.repeat(n-1))
+    // largestNum = Number(largestNum)
 
     for (let i=largestNum; i > 0; i--) {
         for (let j=largestNum; j > 0; j--) {
-            console.log(j)
+            // console.log(j)
             let product = i * j
             if (isPalindrome(product)) {
                 if (product > highest) {
