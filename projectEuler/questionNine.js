@@ -1,14 +1,21 @@
-const questionNine = (num) => {
-    let ans = 0
-    
-    for (let i=0; i <= num; i++) {
-        let c = i + 2
-        let a = i
-        while (c < num) {
-            if (a + )
+const questionNine = () => {
+    var a = 1;
+    var b = 2;
+    var c = Math.sqrt(a*a + b*b);
+    var sum = a+b+c;
+    while(sum != 1000){
+        if(sum > 1000){
+            a++;
+            b = a+1;
+        } else {
+            b++;
         }
+        c = Math.sqrt(a*a + b*b);
+        sum = a + b + c;
     }
-    console.log(ans)
+    
+    console.log('a:' + a + '  b:' + b + '  c:' + c);
+    console.log(a*b*c);
 }
 
-questionNine(24)
+questionNine()
