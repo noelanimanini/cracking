@@ -49,5 +49,19 @@ const preOrder = (root) => {
   return visited
 }
 
+const postOrder = (root) => {
+    let visited = []
+
+    const traverse = (root) => {
+        if (root.left) traverse(root.left)
+        if (root.right) traverse(root.right)
+        visited.push(root.val)
+    }
+
+    traverse(root)
+    console.log(visited)
+    return visited
+}
 // inOrder(a)
-preOrder(a)
+// preOrder(a)
+postOrder(a)
