@@ -31,8 +31,23 @@ const inOrder = (root) => {
         if(node.right) traverse(node.right)
     }
     traverse(root)
-    console.log(visited)
+    // console.log(visited)
     return visited
 }
 
-inOrder(a)
+const preOrder = (root) => {
+  let visited = []
+  
+  const traverse = (root) => {
+      visited.push(root.val)
+      if (root.left) traverse(root.left)
+      if (root.right) traverse(root.right)
+  }
+  traverse(root)
+  console.log(visited)
+//   this is correct the entire time.... your notes were wrong
+  return visited
+}
+
+// inOrder(a)
+preOrder(a)
