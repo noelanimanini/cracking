@@ -1,12 +1,11 @@
 var rotate = function(nums, k) {
     // const result = nums.slice(k+1)
     // const first = nums.slice(0,k+1)
-    for (let i=0; i < k; i++) {
-        let temp = nums[nums.length - 1]
-        nums.pop()
-        nums.unshift(temp)
-    }
-   console.log(nums)
+    let actualRotation = nums.length - (k % nums.length) 
+    if (actualRotation === 0) return nums 
+    const front = nums.splice(actualRotation)
+    console.log(nums.splice(0, 0, ...front))
+    nums.splice(0, 0, ...front)
 };
 
 
