@@ -67,4 +67,8 @@ use sql_invoicing;
 -- join payments p 
 -- on p.invoice_id = i.invoice_id;
 
--- compound join tables
+-- compound join tables 
+
+
+-- outer joins between multiple tables 
+https://www.youtube.com/watch?v=7S_tz1z_5bA&t=16s&ab_channel=ProgrammingwithMosh stoppped at 1:59:40
