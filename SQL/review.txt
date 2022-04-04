@@ -1,0 +1,70 @@
+-- select * from products where quantity_in_stock in ("49", "38", "72");
+-- use sql_store; 
+-- select * from customers where points >= 1000 and points <= 3000;
+-- select * from customers where points between 1000 and 3000;
+-- select first_name, last_name from customers where birth_date between "1990-01-01" and '2000-01-01';
+-- select * from customers where last_name like "b____y"
+-- % represents any number of characters 
+-- _ represents a single character
+-- select * from customers where phone like "%9"
+-- select * from customers where last_name regexp "^field|mac|rose"; 
+-- select * from customers where last_name regexp "[a-h]e"; 
+-- ^ represents the beginnging, $ ending, | logical or, [] match characters listed in the brackets
+-- [a-f] represents a range 
+-- select * from customers where first_name regexp "elka|ambur"; alter
+-- select * from customers where last_name regexp "ey$|on$"
+-- select * from customers where last_name regexp "^my|[se]"
+-- select * from customers where last_name regexp "b[ru]"; 
+-- select * from customers where phone is not null;
+-- select * from orders where shipped_date is null; 
+-- select first_name, last_name, 10 as 'points' from customers order by points, first_name;
+-- select *, quantity * unit_price as "total price" from order_items where order_id="2" order by  "total price" desc; 
+
+-- select * from customers limit 6, 3
+-- select * from customers order by points desc limit 3
+
+-- JOIN 
+-- select order_id, c.customer_id, first_name, last_name 
+-- from orders o join customers c
+-- on o.customer_id = c.customer_id;
+
+-- select o.order_id, o.product_id, p.quantity_in_stock, p.unit_price  
+-- from sql_store.order_items o
+-- join sql_inventory.products p on o.product_id=p.product_id;
+
+-- select order_id, o.product_id, o.unit_price, p.quantity_in_stock from sql_store.order_items o join sql_inventory.products p
+-- on o.product_id=p.product_id
+
+-- joining across databases
+-- select * from order_items oi join sql_inventory.products p on oi.product_id=p.product_id;
+
+-- self joins 
+-- use sql_hr; 
+
+-- select * from employees e join employees m on e.reports_to = m.employee_id;
+-- select e.employee_id, e.first_name, m.first_name as "manager" from employees e join employees m 
+-- on e.reports_to = m.employee_id;
+
+-- joining multiple tables > 2
+ -- select 
+ -- o.order_id, 
+ -- o.order_date, 
+ -- c.first_name, 
+ -- c.last_name,
+ -- os.name as status
+ -- from orders o 
+ -- join customers c 
+ -- on o.customer_id = c.customer_id
+ -- join order_statuses os 
+ -- on o.status = os.order_status_id; 
+
+-- exercise joining multiple tables 
+use sql_invoicing; 
+
+-- select c.client_id, p.invoice_id, date, amount, payment_method from clients c 
+-- join invoices i 
+-- on c.client_id = i.client_id 
+-- join payments p 
+-- on p.invoice_id = i.invoice_id;
+
+-- compound join tables
