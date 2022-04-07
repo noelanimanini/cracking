@@ -1,0 +1,52 @@
+write a recursive call for finding the max depth of a binary tree
+
+const maxDepth = (root) => {
+ if (root.length === 0) return null 
+
+ let left_depth = maxDepth(root.left)
+ let right_depth = maxDepth(root.right)
+
+ return Math.max(left_depth, right_depth)
+
+}
+
+
+What does preorder traversal look like iteratively (root => left > right)
+
+const preOrder = (root) => {
+ let stack = [root]
+ let queue = []
+
+ while (stack.length > 0) {
+     let current = stack.pop()
+
+     queue.push(current.val)
+     if (current.left) stack.push(current.left)
+     if (current.right) stack.push(current.right)
+ }
+
+ return queue
+}
+
+
+what does in order traversal look like: 
+const inOrder = (root) => {
+ let stack = [root]
+ let queue = []
+
+ while (stack.length > 0) {
+     let current = stack.pop()
+
+     
+     if (current.left) {
+         stack.push(current.left )
+     } else {
+         queue.push(current.val)
+         if (current.right) stack.push(current.right)
+     }
+     
+ }
+
+ return queue
+}
+
