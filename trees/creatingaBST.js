@@ -63,9 +63,9 @@ Given a Binary Search Tree and an integer k, we have to determine if there exist
 
 const traverseDFS = (tree, k) => {
 //   use a hash map! 
-   let find = new Set()
-   const stack = [tree.root]
-
+   let find = new Set() // o (1)
+   const stack = [tree.root] // o(n)
+   
    while (stack.length > 0){
        const node = stack.pop()
        if (find.has(node.val)) {
