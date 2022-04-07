@@ -42,5 +42,30 @@ class BST {
 let newTree = new BST()
 newTree.insert(4)
 newTree.insert(2)
-newTree.insert(5)
-console.log(newTree)
+newTree.insert(7)
+newTree.insert(1)
+newTree.insert(3)
+newTree.insert(6)
+newTree.insert(9)
+// console.log(newTree)
+
+const invertingTree = (root) => {
+    if (!root) return null 
+
+    let stack = [root] 
+    while (stack.length > 0) {
+        let current = stack.pop() 
+
+        let temp = current.left 
+        current.left = current.right 
+        current.right = temp 
+
+        if (current.left) stack.push(current.left)
+        if (current.right) stack.push(current.right)
+    }
+    console.log(root)
+
+    return root
+}
+
+invertingTree(newTree)
