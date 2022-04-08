@@ -5,29 +5,38 @@ class Node {
         this.right = null 
     }
 }
-//isnt finished 
-const insertValues = (preorder, inorder) => {
-    let map = new Map() //stores inorder elements
-    
 
-    for (let i=0; i < inorder.length; i++) { //looping over the in order values while pushing it into a map 
-        map[inorder[i]] = i
+class BST {
+    constructor(){
+        this.root = null
     }
 
-    //define a function to start building the tree 
-    const buildTree = (preStart, preEnd, inStart, inEnd) => {
-        //check if we have traversed the entire preorder or inorder array 
-        if (preStart > preEnd || inStart > inEnd) {
-            return null 
+    inOrderTraversal() {
+        const traverse = (root) => {
+            if (!root) return; 
+            traverse(root.left)
+            console.log(root.data);
+            traverse(root.right)
         }
-
-        //
-        let root = new Node(preorder[preStart])
-
-        let inRoot = map[root.val]
-
-        let numsLeft = inRoot - inStart
+        traverse(this.root)
     }
-    
 }
 
+const createCompleteTree = (arr) => {
+    const length = arr.length 
+    const binaryTree = new BST()
+
+    const traverseAndReplace = (root, i) => {
+        if (i < length) {
+            root = new Node(arr[i])
+            root.left = traverseAndReplace(root.left, 2 * i + 1)
+            root.right = traverseAndReplace(root.right, 2 * i + 2)
+        }
+        return root
+    }
+    binaryTree.root = traverseAndReplace(binaryTree.root, 0)
+    return binaryTree
+}
+
+const result = createCompleteTree([1, 2, 3, 4, 5, 6, 6, 6, 6]);
+result.inOrderTraversal();
