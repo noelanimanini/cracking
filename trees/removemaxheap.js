@@ -30,6 +30,8 @@ class MaxHeap {
             index = parentIndex
         }
     }
+
+    
 }
 
 let heap = new MaxHeap()
