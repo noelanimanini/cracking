@@ -69,7 +69,7 @@ const traverseDFS = (tree, k) => {
    while (stack.length > 0){
        const node = stack.pop()
        if (find.has(node.val)) {
-           console.log(node.val, k - node.val)
+        //    console.log(node.val, k - node.val)
            return true 
        }
 
@@ -77,8 +77,48 @@ const traverseDFS = (tree, k) => {
        if (node.left) stack.push(node.left)
        if (node.right) stack.push(node.right)
    }
-   console.log(find)
+//    console.log(find)
    return false 
 } 
 
-traverseDFS(newTree, 11)
+// traverseDFS(newTree, 11)
+
+const invertTree = (root)=> {
+
+    // let stack = [root.root]
+
+    // while (stack.length > 0) {
+    //     let curr = stack.pop()
+    //     // console.log('val', curr.val)
+    //     let temp = curr.left 
+    //     // console.log( 'temp', temp)
+    //     curr.left = curr.right 
+    //     // console.log( 'left', curr.left)
+    //     curr.right = temp
+    //     // console.log( 'right', curr.right)
+
+    //     if (curr.left) stack.push(curr.left)
+    //     if (curr.right) stack.push(curr.right)
+    // }  
+    // console.log(root.root)
+    // return root.root
+    let node = root.root
+    if (!node) return
+
+    let temp = node.left
+    node.left = node.right
+    node.right = temp
+
+    invertTree(node.left)
+    invertTree(node.right)
+    
+    console.log(node)
+    return node
+}
+
+let tree = new BST()
+tree.insert(5)
+tree.insert(4)
+tree.insert(7)
+
+invertTree(tree)
