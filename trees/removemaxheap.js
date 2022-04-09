@@ -64,9 +64,9 @@ class MaxHeap {
 
             if (rightChildIndex < length) {
                 rightchild = this.values[rightChildIndex]
-                if (swap = null && rightchild > element || (swap !== null && rightchild > leftchild)) {
+                if (swap == null && rightchild > element || (swap !== null && rightchild > leftchild)) {
                     swap = rightChildIndex
-                    index = swap
+               
                 }
             }
 
@@ -74,7 +74,7 @@ class MaxHeap {
 
             this.values[index] = this.values[swap]
             this.values[swap] = element
- 
+            index = swap
 
 
         }
@@ -91,3 +91,6 @@ heap.insert(27);
 heap.insert(12);
 heap.insert(55);
 console.log(heap.extractMax())
+console.log(heap)
+console.log(heap.extractMax())
+console.log(heap)
