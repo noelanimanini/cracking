@@ -117,30 +117,30 @@ const invertTree = (root)=> {
 }
 
 let tree = new BST()
-tree.insert(5)
+tree.insert(1)
+tree.insert(2)
+tree.insert(3)
 tree.insert(4)
+tree.insert(5)
+tree.insert(6)
 tree.insert(7)
+tree.insert(8)
 
 // invertTree(tree)
 
 const leftView = (root) => {
-    let stack = [root.root]
     let values = []
+   const dfs = (node) => {
+       if (!node) return null 
 
-    while (stack.length > 0) {
-        let cur = stack.pop()
-
-        if (cur.left) {
-            values.push(cur.val, cur.left.val)
-          
-            stack.push(cur.left)
-           
-        }
-
-        if (cur.right) stack.push(cur.right)
-    }
-    console.log(values)
-    return values
+       dfs(node.left)
+       values.push(node.val)
+       dfs(node.right)
+       
+   }
+   dfs(root.root)
+   console.log(values)
+   return values
 }
 
 leftView(tree)
