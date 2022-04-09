@@ -112,7 +112,7 @@ const invertTree = (root)=> {
     invertTree(node.left)
     invertTree(node.right)
     
-    console.log(node)
+    // console.log(node)
     return node
 }
 
@@ -121,4 +121,26 @@ tree.insert(5)
 tree.insert(4)
 tree.insert(7)
 
-invertTree(tree)
+// invertTree(tree)
+
+const leftView = (root) => {
+    let stack = [root.root]
+    let values = []
+
+    while (stack.length > 0) {
+        let cur = stack.pop()
+
+        if (cur.left) {
+            values.push(cur.val, cur.left.val)
+          
+            stack.push(cur.left)
+           
+        }
+
+        if (cur.right) stack.push(cur.right)
+    }
+    console.log(values)
+    return values
+}
+
+leftView(tree)
