@@ -1,21 +1,16 @@
-function quickSort(array) {
-  //base case
-  if (array.length <= 1) return array;
+function quickSort(values) {
+ if (values.length <= 1) return values 
 
-  //create the first element for the array, and two empty arrays
-  let pivot = array.shift();
-  let less = [];
-  let greater = [];
+ let left = []
+ let right = []
+ let pivot = values.pop()
 
-  //loop through the array
-  for (let ele of array) {
-    let value = array[ele];
-    value <= pivot ? less.push(value) : greater.push(value);
-  }
+ for (let i=0; i < values.length; i++) {
+   values[i] <= pivot ? left.push(values[i]) : right.push(values[i])
+ }
 
-  console.log([...quickSort(less), pivot, ...quickSort(greater)]);
-  //return the concatenated recursive array using the spread operator.
-  return [...quickSort(less), pivot, ...quickSort(greater)];
+
+ return [...quickSort(left), pivot, ...quickSort(right)]
 }
 
 //Big O is o (n log n). This means that the algorithm is very efficient.
